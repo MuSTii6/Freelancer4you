@@ -20,7 +20,7 @@ public class Job extends Freelancer {
     private Double earnings;
     private JobType jobType;
     private JobState jobState;
-    @Id
+
     private String freelancerId;
 
 }
