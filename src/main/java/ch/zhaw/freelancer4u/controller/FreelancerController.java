@@ -23,13 +23,6 @@ public class FreelancerController {
         Freelancer fDAO = new Freelancer(fDTO.getEmail(), fDTO.getName());
         Freelancer f = freelancerRepository.save(fDAO);
         return new ResponseEntity<>(f, HttpStatus.CREATED);
+    
     }
-
-
-  
-
-
-
-
-
 }
