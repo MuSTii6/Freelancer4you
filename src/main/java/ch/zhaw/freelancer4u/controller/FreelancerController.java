@@ -1,9 +1,12 @@
 
 package ch.zhaw.freelancer4u.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +26,13 @@ public class FreelancerController {
         Freelancer fDAO = new Freelancer(fDTO.getEmail(), fDTO.getName());
         Freelancer f = freelancerRepository.save(fDAO);
         return new ResponseEntity<>(f, HttpStatus.CREATED);
-    
+
     }
+
+    @GetMapping("/freelancer")
+    public ResponseEntity<List<Freelancer>> getAllFreelancer() {
+        List<Freelancer> allFree = freelancerRepository.findAll();
+        return new ResponseEntity<>(allFree, HttpStatus.OK);
+    }
+
 }
