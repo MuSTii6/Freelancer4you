@@ -24,4 +24,12 @@ public class FreelancerController {
         Freelancer f = freelancerRepository.save(fDAO);
         return new ResponseEntity<>(f, HttpStatus.CREATED);
     }
+
+
+  
+
+
+
+
+
 }
