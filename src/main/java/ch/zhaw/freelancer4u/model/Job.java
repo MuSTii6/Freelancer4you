@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @RequiredArgsConstructor
 @Getter
 @Document("job")
-public class Job extends Freelancer {
-    public Job(String description2) {
+public class Job {
+    public Job(String description) {
     }
     @Id
     private String id;
@@ -20,9 +20,12 @@ public class Job extends Freelancer {
     private String description;
     @NonNull
     private Double earnings;
+    
+    private String freelancerId;
+
+    @NonNull
     private JobType jobType;
     private JobState jobState;
-@Id
-    private String freelancerId;
+
 
 }

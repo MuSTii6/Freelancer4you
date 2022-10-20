@@ -24,18 +24,25 @@ public class JobController {
 
     @PostMapping("/job")
     public ResponseEntity<Job> createJob(
-            @RequestBody JobCreateDTO jDTO) {
-        Job jDAO = new Job(jDTO.getDescription()), jDTO.getEarnings()), jDTO.getJobType());
-        Job j = JobRepository.save(jDAO);
+            @RequestBody JobCreateDTO fDTO) {
+        Job fDAO = new Job(fDTO.getDescription(),fDTO.getEarnings(),fDTO.getJobType());
+        Job f = jobRepository.save(fDAO);
         return new ResponseEntity<>(f, HttpStatus.CREATED);
 
     }
 
   
+    @GetMapping("/job")
+    public ResponseEntity<List<Job>> getAllJob() {
+        List<Job> allFree = jobRepository.findAll();
+        return new ResponseEntity<>(allFree, HttpStatus.OK);
+    }
+    
+
 
     @GetMapping("/job/{id}")
     public ResponseEntity<Job> getJobById(@PathVariable String id) {
-     Optional<Job> optJob = JobRepository.findById(id);
+     Optional<Job> optJob = jobRepository.findById(id);
      if (optJob.isPresent()) {
      return new ResponseEntity<>(optJob.get(), HttpStatus.OK);
      } else {
@@ -43,9 +50,7 @@ public class JobController {
      }
     } 
 
-
     
-
 
 
 
