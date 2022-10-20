@@ -27,7 +27,7 @@ public class JobController {
             @RequestBody JobCreateDTO fDTO) {
         Job fDAO = new Job(fDTO.getDescription(),fDTO.getEarnings(),fDTO.getJobType());
         Job f = jobRepository.save(fDAO);
-        return new ResponseEntity<>(f, HttpStatus.CREATED);
+        return new ResponseEntity<>(f, HttpStatus.CREATED;
 
     }
 
