@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ch.zhaw.freelancer4u.model.Job;
 import ch.zhaw.freelancer4u.model.JobCreateDTO;
+import ch.zhaw.freelancer4u.model.JobFreelancerAggregationDTO;
 import ch.zhaw.freelancer4u.model.JobStateAggregationDTO;
 import ch.zhaw.freelancer4u.repository.JobRepository;
 
@@ -24,7 +25,9 @@ import ch.zhaw.freelancer4u.repository.JobRepository;
 @RestController
 @RequestMapping("/api/job")
 public class JobController {
+
     @Autowired
+    public
     JobRepository jobRepository;
 
     @PostMapping("")
@@ -53,10 +56,10 @@ public class JobController {
     }
 
     @GetMapping("/earningsabove")
-    public ResponseEntity<List<Job>> getJobMinEarning(@RequestParam Double min) {
+    public ResponseEntity<List<Job>> getJobMinEarning(Double min) {
         return new ResponseEntity<>(jobRepository.findByEarningsGreaterThan(min), HttpStatus.OK);
-
     }
+
 
     @GetMapping("/earningsinrange")
     public ResponseEntity<List<Job>> getJobMinMaxEarning(@RequestParam Double min, @RequestParam Double max) {
@@ -72,6 +75,6 @@ public class JobController {
     public ResponseEntity<List<JobFreelancerAggregationDTO>> getJobFreelancerAggregation() {
         return new ResponseEntity<>(jobRepository.getJobFreelancerAggregation(), HttpStatus.OK);
     }
-}
+
 
 }
