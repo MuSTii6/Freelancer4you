@@ -56,7 +56,7 @@ public class JobController {
     }
 
     @GetMapping("/earningsabove")
-    public ResponseEntity<List<Job>> getJobMinEarning(Double min) {
+    public ResponseEntity<Optional<Job>> getJobMinEarning(Double min) {
         return new ResponseEntity<>(jobRepository.findByEarningsGreaterThan(min), HttpStatus.OK);
     }
 
