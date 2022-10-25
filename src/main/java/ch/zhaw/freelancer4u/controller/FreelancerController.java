@@ -24,7 +24,7 @@ public class FreelancerController {
     @Autowired
     FreelancerRepository freelancerRepository;
 
-    @PostMapping("/api/freelancer")
+    @PostMapping("")
     public ResponseEntity<Freelancer> createFreelancer(
             @RequestBody FreelancerCreateDTO fDTO) {
         Freelancer fDAO = new Freelancer(fDTO.getEmail(), fDTO.getName());
@@ -33,13 +33,13 @@ public class FreelancerController {
 
     }
 
-    @GetMapping("/api/freelancer")
+    @GetMapping("")
     public ResponseEntity<List<Freelancer>> getAllFreelancer() {
         List<Freelancer> allFree = freelancerRepository.findAll();
         return new ResponseEntity<>(allFree, HttpStatus.OK);
     }
 
-    @GetMapping("/api/freelancer/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Freelancer> getFreelancerById(@PathVariable String id) {
         Optional<Freelancer> optFreelancer = freelancerRepository.findById(id);
         if (optFreelancer.isPresent()) {
