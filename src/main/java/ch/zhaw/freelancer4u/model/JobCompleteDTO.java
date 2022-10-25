@@ -6,7 +6,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public class JobCompleteDTO {
+    
     private String jobId;
+    
     private String comment;
+
+
+
+
+
 }
 

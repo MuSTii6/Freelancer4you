@@ -7,8 +7,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public class JobFreelancerAggregationDTO {
+    
     private String id;
+    
     private List<String> jobIds;
+    
     private Double totalEarnings;
+
+
+
+
+
 }
 
