@@ -4,12 +4,14 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Getter
+@Setter
 @Document("job")
 public class Job {
     public Job(String description) {
@@ -25,7 +27,8 @@ public class Job {
 
     @NonNull
     private JobType jobType;
-    private JobState jobState;
+    private JobState jobState = JobState.NEW;
+    private String comment;
 
 
 }
