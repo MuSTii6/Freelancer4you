@@ -1,5 +1,5 @@
 
-(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35733/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
 var app = (function () {
     'use strict';
 
@@ -5392,9 +5392,9 @@ var app = (function () {
     			create_component(router.$$.fragment);
     			attr_dev(a0, "class", "navbar-brand");
     			attr_dev(a0, "href", "#/");
-    			add_location(a0, file, 8, 3, 191);
+    			add_location(a0, file, 8, 3, 199);
     			attr_dev(span, "class", "navbar-toggler-icon");
-    			add_location(span, file, 18, 4, 460);
+    			add_location(span, file, 18, 4, 478);
     			attr_dev(button, "class", "navbar-toggler");
     			attr_dev(button, "type", "button");
     			attr_dev(button, "data-bs-toggle", "collapse");
@@ -5402,31 +5402,31 @@ var app = (function () {
     			attr_dev(button, "aria-controls", "navbarNav");
     			attr_dev(button, "aria-expanded", "false");
     			attr_dev(button, "aria-label", "Toggle navigation");
-    			add_location(button, file, 9, 3, 245);
+    			add_location(button, file, 9, 3, 254);
     			attr_dev(a1, "class", "nav-link");
     			attr_dev(a1, "aria-current", "page");
     			attr_dev(a1, "href", "#/freelancers");
-    			add_location(a1, file, 23, 6, 628);
+    			add_location(a1, file, 23, 6, 651);
     			attr_dev(li0, "class", "nav-item");
-    			add_location(li0, file, 22, 5, 600);
+    			add_location(li0, file, 22, 5, 622);
     			attr_dev(a2, "class", "nav-link");
     			attr_dev(a2, "href", "#/jobs");
-    			add_location(a2, file, 30, 6, 777);
+    			add_location(a2, file, 30, 6, 807);
     			attr_dev(li1, "class", "nav-item");
-    			add_location(li1, file, 29, 5, 749);
+    			add_location(li1, file, 29, 5, 778);
     			attr_dev(ul, "class", "navbar-nav");
-    			add_location(ul, file, 21, 4, 571);
+    			add_location(ul, file, 21, 4, 592);
     			attr_dev(div0, "class", "collapse navbar-collapse");
     			attr_dev(div0, "id", "navbarNav");
-    			add_location(div0, file, 20, 3, 513);
+    			add_location(div0, file, 20, 3, 533);
     			attr_dev(div1, "class", "container-fluid");
-    			add_location(div1, file, 7, 2, 158);
+    			add_location(div1, file, 7, 2, 165);
     			attr_dev(nav, "class", "navbar navbar-expand-lg bg-light");
-    			add_location(nav, file, 6, 1, 109);
+    			add_location(nav, file, 6, 1, 115);
     			attr_dev(div2, "class", "container");
-    			add_location(div2, file, 37, 1, 870);
+    			add_location(div2, file, 37, 1, 907);
     			attr_dev(div3, "id", "app");
-    			add_location(div3, file, 5, 0, 93);
+    			add_location(div3, file, 5, 0, 98);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
