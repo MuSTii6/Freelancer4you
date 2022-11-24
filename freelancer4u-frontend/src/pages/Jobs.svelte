@@ -1,8 +1,7 @@
 <script>
     import axios from "axios";
 
-    // TODO: Setze hier die URL zu deinem mit Postman erstellten Mock Server
-    const api_root = "http://localhost:8081";
+    const api_root = "http://localhost:8080";
 
     let jobs = [];
     let job = {
@@ -20,7 +19,7 @@
 
         axios(config)
             .then(function (response) {
-                jobs = response.data;
+                jobs = response.data.content;
             })
             .catch(function (error) {
                 alert("Could not get jobs");
@@ -50,7 +49,6 @@
             });
     }
 </script>
-
 
 <h1 class="mt-3">Create Job</h1>
 <form class="mb-5">
@@ -90,7 +88,9 @@
             />
         </div>
     </div>
-    <button type="button" class="btn btn-primary" on:click={createJob}>Submit</button>
+    <button type="button" class="btn btn-primary" on:click={createJob}
+        >Submit</button
+    >
 </form>
 
 <h1>All Jobs</h1>

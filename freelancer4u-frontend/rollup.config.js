@@ -36,7 +36,6 @@ export default {
 		name: 'app',
 		file: '../src/main/resources/static/build/bundle.js'
 	},
-
 	plugins: [
 		svelte({
 			compilerOptions: {

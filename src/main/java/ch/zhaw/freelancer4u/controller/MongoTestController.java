@@ -21,25 +21,15 @@ public class MongoTestController {
             // create test document
             Long time = System.currentTimeMillis();
             DBObject objectToSave = BasicDBObjectBuilder.start().add("time", time).get();
-            
             // store test document
             DBObject saved = mongoTemplate.save(objectToSave, "Test");
-            
             // retrive test document
-            DBObject read = mongoTemplate.findById(saved.get("_id"), DBObject.class, "Test");
-            
+            DBObject read = mongoTemplate.findById(saved.get("_id"),DBObject.class,"Test");
             // verify retrived document
             if (read != null && read.get("time").toString().equals(time.toString())) {
                 return new ResponseEntity<>("Connection ok", HttpStatus.OK);
             }
-        } catch (Exception e) {
-        }
+        } catch (Exception e) {}  
         return new ResponseEntity<>("Connection failed", HttpStatus.INTERNAL_SERVER_ERROR);
-    
     }
-
-
-
-
-
 }

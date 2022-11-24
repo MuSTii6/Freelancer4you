@@ -1,4 +1,3 @@
-
 package ch.zhaw.freelancer4u.controller;
 
 import java.util.List;
@@ -21,16 +20,16 @@ import ch.zhaw.freelancer4u.repository.FreelancerRepository;
 @RestController
 @RequestMapping("/api/freelancer")
 public class FreelancerController {
+
     @Autowired
     FreelancerRepository freelancerRepository;
 
     @PostMapping("")
     public ResponseEntity<Freelancer> createFreelancer(
-            @RequestBody FreelancerCreateDTO fDTO) {
+        @RequestBody FreelancerCreateDTO fDTO) {
         Freelancer fDAO = new Freelancer(fDTO.getEmail(), fDTO.getName());
         Freelancer f = freelancerRepository.save(fDAO);
         return new ResponseEntity<>(f, HttpStatus.CREATED);
-
     }
 
     @GetMapping("")
@@ -48,5 +47,5 @@ public class FreelancerController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
 }
+
