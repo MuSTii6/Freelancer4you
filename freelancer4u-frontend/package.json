@@ -5,11 +5,15 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv ../src/main/resources/static --no-clear --port 8081"
+    "watch": "rollup -c rollup.config.watch.js -w",
+    "start": "sirv ../src/main/resources/static --no-clear --port 8081",
+    "cypress": "npx cypress open"
+
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "cypress": "^11.1.0",
     "rollup": "^2.72.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.5",
