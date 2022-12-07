@@ -1,7 +1,7 @@
 <script>
     import axios from "axios";
-
     import { querystring } from "svelte-spa-router";
+    import { jwt_token} from "../store";
 
     const api_root = "http://localhost:8080";
 
@@ -32,7 +32,7 @@
         var config = {
             method: "get",
             url: api_root + "/api/freelancer?" + query,
-            headers: {},
+            headers: {Authorization: "Bearer "+$jwt_token},
         };
 
         axios(config)
@@ -52,6 +52,7 @@
             url: api_root + "/api/freelancer",
             headers: {
                 "Content-Type": "application/json",
+                Authorization: "Bearer "+$jwt_token
             },
             data: freelancer,
         };

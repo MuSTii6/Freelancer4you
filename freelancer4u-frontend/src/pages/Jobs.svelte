@@ -1,6 +1,6 @@
 <script>
     import axios from "axios";
-
+    import { jwt_token} from "../store";
     import { querystring } from "svelte-spa-router";
 
     const api_root = "http://localhost:8080";
@@ -41,7 +41,7 @@
         var config = {
             method: "get",
             url: api_root + "/api/job?" + query,
-            headers: {},
+            headers: {Authorization: "Bearer "+$jwt_token}
         };
 
         axios(config)
@@ -61,6 +61,7 @@
             url: api_root + "/api/job",
             headers: {
                 "Content-Type": "application/json",
+                Authorization: "Bearer "+$jwt_token
             },
             data: job,
         };
@@ -75,6 +76,7 @@
                 console.log(error);
             });
     }
+
 </script>
 
 <h1 class="mt-3">Create Job</h1>
