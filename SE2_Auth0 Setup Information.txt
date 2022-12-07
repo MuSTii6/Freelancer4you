@@ -1,0 +1,8 @@
+Freelancer 4u
+
+Domain: dev-1318lcns27leyer2.us.auth0.com
+
+Client ID: s0eTPwwyjHgbWv8wwbOgw07U9lqSYpWy
+
+Client Secret: BFj9BvIC6MLSfRHEvUfSNqxQ_DNPonMVzGSiYO646WeRXn3tj5cKaOuT7H6P0gBF
+
